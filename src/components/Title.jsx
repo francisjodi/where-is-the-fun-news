@@ -8,6 +8,6 @@ export default function Title() {
     margin-top: 20px;
   `;
   return (
-    <Header>News💡</Header>
+    <Header>💡 Where's the Fun News? 💡</Header>
   )
 }
