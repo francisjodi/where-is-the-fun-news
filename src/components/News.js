@@ -8,10 +8,11 @@ function News(props) {
 
   return (
     <div>
-      <h1 className="titlet">News💡</h1>
       <div className="all_news">
-        {data ? data.articles.map((news) => ( <NewsArticle data={news} key={news.url} />))
-          : "Loading"}
+        {data ?
+          data.articles.map((news) => (<NewsArticle data={news} key={news.url} />))
+          : "Loading"
+        }
       </div>
     </div>
   );
