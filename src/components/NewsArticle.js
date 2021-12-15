@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import {NewsContext} from "../NewsContext";
-import { createFavorite } from "../favoritesService";
+import { addToFavorites } from "../favoritesService";
 
 const Article = styled.div`
   background: rgb(156,45,253);
@@ -40,7 +40,7 @@ function NewsArticle({ data }) {
         <span className="news_source">{data.source.name}</span>
       </ArticleContent>
       <SaveArticle onClick={() => {
-        createFavorite(data.source, data).then(
+        addToFavorites(data).then(
           alert("Article Saved")
         )
       }}>
