@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
+import {NewsContext} from "../NewsContext";
+import { createFavorite } from "../favoritesService";
 
 const Article = styled.div`
   background: rgb(156,45,253);
@@ -17,9 +19,17 @@ const ArticleContent = styled.div`
   height: 100%;
   padding: 20px;
   border-radius: 5px;
+  //cursor: pointer;
+`;
+
+const SaveArticle = styled.button`
+  position: relative;
+  left: 290px;
+  bottom: 30px;
 `;
 
 function NewsArticle({ data }) {
+
   return (
     <Article className="news">
       <ArticleContent>
@@ -29,6 +39,13 @@ function NewsArticle({ data }) {
         <span className="news_published">{data.publishedAt}</span>
         <span className="news_source">{data.source.name}</span>
       </ArticleContent>
+      <SaveArticle onClick={() => {
+        createFavorite(data.source, data).then(
+          alert("Article Saved")
+        )
+      }}>
+        Save Article
+      </SaveArticle>
     </Article>
   );
 }

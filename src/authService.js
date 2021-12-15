@@ -51,6 +51,13 @@ const SignOutBtn = styled.button`
 `;
 
 export function SignIn() {
+
+  const user = useAuthentication()
+  useEffect(() => {
+    if (!user || window.location.href.slice(-4) === "news") return;
+    window.location.href = "/news";
+  },[user])
+
   return (
     <div>
       <Title />

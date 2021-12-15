@@ -4,15 +4,9 @@ import { NewsContextProvider } from "./NewsContext";
 import News from "./components/News";
 import "./app.css";
 import { SignIn, SignOut, useAuthentication } from "./authService";
+import SavedArticles from "./components/SavedArticles";
 
 function App() {
-  const user = useAuthentication()
-
-  useEffect(() => {
-    if (!user || window.location.href.slice(-4) === "news") return;
-    window.location.href = "/news";
-  },[user])
-
   return (
     <NewsContextProvider>
       <Router>
@@ -22,6 +16,9 @@ function App() {
           } />
           <Route path="/news" element={
             <News />
+          } />
+          <Route path="/view" element={
+            <SavedArticles />
           } />
         </Routes>
       </Router>

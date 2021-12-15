@@ -1,8 +1,8 @@
-import { db } from "../firebaseConfig"
+import { db } from "./firebaseConfig"
 import { collection, query, getDocs, addDoc, orderBy, limit, Timestamp } from "firebase/firestore"
 
-export async function createFavorite({ Source, Article }) {
-  const data = { Source, Article, Date: Timestamp.now() }
+export async function createFavorite(source, article) {
+  const data = { source, article, Date: Timestamp.now() }
   const docRef = await addDoc(collection(db, "favorites"), data)
   return { id: docRef.id, ...data }
 }

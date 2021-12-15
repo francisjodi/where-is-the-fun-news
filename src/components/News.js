@@ -1,9 +1,10 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { NewsContext } from "../NewsContext";
 import NewsArticle from "./NewsArticle";
 import Title from "./Title";
 import Search from "./Search";
 import { SignIn, SignOut, useAuthentication } from "../authService";
+import ReRoute from "./ReRoute";
 
 function News(props) {
   const user = useAuthentication();
@@ -16,15 +17,18 @@ function News(props) {
 
   return (
     <div>
-      <Title />
-      <Search />
-      <div className="all_news">
-        {data ?
-          data.articles.map((news) => (<NewsArticle data={news} key={news.url} />))
-          : "Loading"
-        }
+      <div>
+        <Title />
+        <Search />
+        <div className="all_news">
+          {data ?
+            data.articles.map((news) => (<NewsArticle data={news} key={news.url} />))
+            : "Loading"
+          }
+        </div>
+        <ReRoute route="/view" text="Saved Articles" />
+        <SignOut />
       </div>
-      <SignOut />
     </div>
   );
 }
