@@ -30,7 +30,7 @@ export default function Search() {
 
   useEffect(() => {
     axios.get(
-      `http://newsapi.org/v2/everything?q=${query}&sortBy=relevancy,publishedAt&apiKey=847f748206a548ce86de55a5d8d4229a`
+      `https://proxyforelenaandtori.rtoal.repl.co/news?q=${encodeURIComponent(query)}`
     )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));

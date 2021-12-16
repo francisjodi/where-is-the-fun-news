@@ -5,12 +5,12 @@ export const NewsContext = createContext({});
 
 export const NewsContextProvider = (props) => {
   const [data, setData] = useState();
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("joy");
   //const apiKey = "847f748206a548ce86de55a5d8d4229a";
 
   useEffect(() => {
     axios.get(
-        `http://newsapi.org/v2/everything?q=bitcoin&sortBy=relevancy,publishedAt&apiKey=847f748206a548ce86de55a5d8d4229a`
+        `https://proxyforelenaandtori.rtoal.repl.co/news?q=joy`
       )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
