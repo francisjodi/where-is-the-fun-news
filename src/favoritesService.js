@@ -1,5 +1,5 @@
 import { db } from "./firebaseConfig"
-import { collection, query, getDocs, addDoc, orderBy, limit, Timestamp } from "firebase/firestore"
+import { collection, query, getDocs, addDoc, limit } from "firebase/firestore"
 
 
 // NOT FINISHED: This only gets the first 20 articles. In a real app,

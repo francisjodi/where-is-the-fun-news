@@ -1,6 +1,5 @@
-import React, {useContext} from "react";
+import React from "react";
 import styled from "styled-components";
-import {NewsContext} from "../NewsContext";
 import { addToFavorites } from "../favoritesService";
 
 const Article = styled.div`
@@ -19,13 +18,13 @@ const ArticleContent = styled.div`
   height: 100%;
   padding: 20px;
   border-radius: 5px;
-  //cursor: pointer;
 `;
 
 const SaveArticle = styled.button`
   position: relative;
   left: 290px;
   bottom: 30px;
+  cursor: pointer;
 `;
 
 function NewsArticle({ data }) {

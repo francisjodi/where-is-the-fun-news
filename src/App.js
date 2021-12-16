@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NewsContextProvider } from "./NewsContext";
 import News from "./components/News";
 import "./app.css";
-import { SignIn, SignOut, useAuthentication } from "./authService";
+import { SignIn } from "./authService";
 import SavedArticles from "./components/SavedArticles";
 
 function App() {

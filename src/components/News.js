@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext} from "react";
 import { NewsContext } from "../NewsContext";
 import NewsArticle from "./NewsArticle";
 import Title from "./Title";
