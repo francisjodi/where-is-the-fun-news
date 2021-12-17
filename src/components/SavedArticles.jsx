@@ -1,6 +1,5 @@
 import {fetchFavorites} from "../favoritesService";
-import { NewsContext } from "../NewsContext";
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import styled from "styled-components";
 import Title from "./Title";
 import ReRoute from "./ReRoute";
@@ -45,11 +44,16 @@ const ArticleContent = styled.div`
 export default function SavedArticles() {
 
   const [loaded, setLoaded] = useState(false);
-  const { data, setData } = useContext(NewsContext);
+  const [saved, setSaved] = useState(false);
+
 
   useEffect(() => {
     fetchFavorites()
-      .then((response) => {setData(response); setLoaded(true); console.log(response)})
+      .then((response) => {
+        setSaved(response);
+        setLoaded(true);
+        console.log(response);
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -68,7 +72,7 @@ export default function SavedArticles() {
       <Title />
       {loaded ?
         (<Articles>
-          {data.map((article) => (
+          {saved && saved.map((article) => (
             <ArticleDiv>
               <ArticleContent onClick={() => {window.open(article.url, "_blank")}}>
                 <h3>{article.title}</h3>

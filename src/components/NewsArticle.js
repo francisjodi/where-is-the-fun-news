@@ -25,6 +25,11 @@ const SaveArticle = styled.button`
   left: 290px;
   bottom: 30px;
   cursor: pointer;
+  background: rgb(156,45,253);
+  background: linear-gradient(0deg, rgba(156,45,253,1) 0%, rgba(34,193,195,1) 100%);
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
 `;
 
 function NewsArticle({ data }) {
