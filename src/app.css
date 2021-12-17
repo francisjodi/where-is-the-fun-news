@@ -48,3 +48,15 @@ body {
   margin-top: 10px;
   color: rgb(122, 122, 122);
 }
+
+div {
+  background: url("https://t4.ftcdn.net/jpg/02/18/12/57/360_F_218125782_EuEjWPHU3JkaOd6vWDyTYzD5trQv4ub8.jpg")
+    no-repeat center center fixed;
+
+  background-size: auto;
+
+  /*
+  background-repeat: no-repeat;
+  background-size: auto;
+  */
+}
